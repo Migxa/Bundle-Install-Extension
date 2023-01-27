@@ -1,5 +1,5 @@
 # Bundle-Install-Extension
-
+## How to Install
 1. Open the link
 2. Download the extension as a ZIP file
 3. Extract the contents from a ZIP file into a separate folder
