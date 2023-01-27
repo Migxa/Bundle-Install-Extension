@@ -1,4 +1,5 @@
-# Bundle-Install-Extension
+Mike's Handy Dandy
+# Bundle Install Helper
 ## How to Install
 1. Open the link
 2. Download the extension as a ZIP file
