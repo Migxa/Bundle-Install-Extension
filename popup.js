@@ -2,6 +2,7 @@ const button = document.getElementById("button");
 
 const text = document.getElementById("text");
 const img = document.getElementById("img");
+const doneText = document.getElementById("alldone");
 
 var moduleList = []
 
@@ -21,6 +22,7 @@ button.addEventListener("click", () => {
     }
   });
   // img.style.display = "block"
+  doneText.style.display = "contents"
   injectCode('CMMS Manual T&M Column', 2);
   injectCode('CMMS Config UE', 1);
 });

@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Background Changer",
+    "name": "Bundle Install Helper",
     "version": "1.0.0",
-    "description": "Does stuff with the background.",
+    "description": "Fills out the 'Bundle Install Preview' table for you.",
     "icons": {
       "128": "icon128.png",
       "48": "icon48.png",
