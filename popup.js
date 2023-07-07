@@ -6,6 +6,10 @@ const doneText = document.getElementById("alldone");
 
 var moduleList = []
 
+function pushErrorList(element){
+  errorList.push(element);
+}
+
 button.addEventListener("click", () => {
   var textArea = text.value.split("\n");
   textArea.forEach(element => {
@@ -28,7 +32,6 @@ button.addEventListener("click", () => {
 });
 
 function updateHTML(element, fieldValue) {
-    console.log("Updated: "+element);
         try {
             var xpath = "//td[text()='" + element + "']";
             var matchingElement = document.evaluate(
@@ -39,20 +42,27 @@ function updateHTML(element, fieldValue) {
               null
             );
             var snapshotLength = matchingElement.snapshotLength;
+            if(snapshotLength == 0){
+              throw "Did not find: "+element;
+            }
             for (let index = 0; index < snapshotLength; index++) {
                 var nodeElement = matchingElement.snapshotItem(index);
+                var found = false;
                 try {
                     var parentElement = nodeElement.parentNode;
                     var testField = parentElement.getElementsByClassName("input");
                     var selectField = testField[0];
                     selectField.selectedIndex = fieldValue;
+                    found = true;
                 } catch (error) {
-                    
                 }
+
             }
+            if(!found){
+              console.error("Did not find: "+element);}
             
           } catch (error) {
-            console.error(error, element);
+            console.error(error);
           }
   }
 
